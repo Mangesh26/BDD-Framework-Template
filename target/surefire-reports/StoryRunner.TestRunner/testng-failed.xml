@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [StoryRunner.TestRunner]" junit="true">
+  <test name="Command line test f5eb0ebc-5ed2-4c5d-bdb9-bbab19988392">
+    <classes>
+      <class name="StoryRunner.TestRunner"/>
+    </classes>
+  </test> <!-- Command line test f5eb0ebc-5ed2-4c5d-bdb9-bbab19988392 -->
+</suite> <!-- Failed suite [StoryRunner.TestRunner] -->

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="StoryRunner.TestRunner" duration-ms="67595" started-at="2018-12-04T15:29:23Z" finished-at="2018-12-04T15:30:30Z">
+    <groups>
+    </groups>
+    <test name="Command line test f5eb0ebc-5ed2-4c5d-bdb9-bbab19988392" duration-ms="67595" started-at="2018-12-04T15:29:23Z" finished-at="2018-12-04T15:30:30Z">
+    </test> <!-- Command line test f5eb0ebc-5ed2-4c5d-bdb9-bbab19988392 -->
+  </suite> <!-- StoryRunner.TestRunner -->
+</testng-results>
