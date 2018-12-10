@@ -22,6 +22,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -43,7 +44,7 @@ public class BrowserAction {
 	static String snapshotPath = null;
 
 	public BrowserAction() {
-		// PropertyConfigurator.configure("log4j.properties");
+		 //PropertyConfigurator.configure("//Properties//log4j.properties");
 	}
 
 	/*
@@ -76,19 +77,21 @@ public class BrowserAction {
 	 */
 
 	// To verify element is displayed or not
-	public static boolean verifyElementDisplayed(WebDriver driver, By locator) {
+	public boolean verifyElementDisplayed(WebDriver driver, By locator) throws Exception {
 		try {
-			if (driver.findElement(locator).isDisplayed()) {
-				logger.debug("viewElementDisplayed with locator : " + locator);
+			if (getElement(driver, locator).isDisplayed()) {
+				logger.info("viewElementDisplayed with locator : " + locator);
 				return true;
 			} else {
-				logger.debug("viewElement not displayed with locator : " + locator);
+				logger.info("viewElement not displayed with locator : " + locator);
 				return false;
 			}
 		} catch (NoSuchElementException ex) {
-			logger.error("NoSuchElementException in viewElementDisplayed <{}> " + ex);
+			takeSnapShot(driver);
+			reportLogs("NoSuchElementException in viewElementDisplayed method", ex.toString());
 		} catch (Exception ex) {
-			logger.error("Exception in viewElementDisplayed method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in viewElementDisplayed method of BrowserActions class" , ex.toString());
 		}
 		return false;
 	}
@@ -97,78 +100,84 @@ public class BrowserAction {
 	public void elementWait(int timeout) throws InterruptedException {
 		try {
 			Thread.sleep(timeout);
-			logger.debug("Wait for element upto " + timeout + " Seconds ");
+			logger.info("Wait for element upto " + timeout + " Seconds ");
 		} catch (TimeoutException ex) {
-			logger.error("Timeout Exception in elementWait method of BrowserActions class <{}>" + ex);
+			reportLogs("Timeout Exception in elementWait method of BrowserActions class" , ex.toString());
 		} catch (Exception ex) {
-			logger.error("Exception in elementWait method of BrowserActions class <{}>" + ex);
+			reportLogs("Exception in elementWait method of BrowserActions class <{}>" , ex.toString());
 		}
 	}
 
 	// Wait to load the page
-	public boolean waitForPageLoad(WebDriver driver, By locator) {
+	public boolean waitForPageLoad(WebDriver driver, By locator) throws Exception {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 10);
 			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
-			logger.debug("waitForPageLoad with locator : " + locator);
+			logger.info("waitForPageLoad with locator : " + locator);
 
 			if (element != null)
 				return true;
 		} catch (NoSuchElementException ex) {
-			logger.error("NoSuchElementException in waitForPageLoad method  of BrowserActions class <{}> " + ex);
+			takeSnapShot(driver);
+			reportLogs("NoSuchElementException in waitForPageLoad method  of BrowserActions class", ex.toString());
 		} catch (TimeoutException ex) {
-			logger.error("Timeout Exception in waitForPageLoad method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Timeout Exception in waitForPageLoad method of BrowserActions class", ex.toString());
 		} catch (Exception ex) {
-			logger.error("Exception in waitForPageLoad method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in waitForPageLoad method of BrowserActions class", ex.toString());
 		}
 		return false;
 	}
+	
+	public void reportLogs(String message,String ex){
+		Reporter.addStepLog(message);
+		Reporter.setTestRunnerOutput(message + "<{}> " + ex);
+		logger.error(message + "<{}> " + ex);
+	
+	}
 
-	// To click button/element
-	public static void clickButton(WebDriver driver, By locator) throws Exception {
+	// To click element
+	public void clickButton(WebDriver driver, By locator) throws Exception {
 		try {
-			driver.findElement(locator).click();
-			logger.debug("clickButton with locator : " + locator);
+			WebElement element = getElement(driver, locator);
+			element.click();
+			logger.info("clickButton with locator : " + locator);
 		} catch (Exception ex) {
-			Reporter.setTestRunnerOutput("Exception in clickButton method of BrowserActions class <{}>" + ex);
 			takeSnapShot(driver);
-			//Reporter.addScreenCaptureFromPath(snapshotPath);
-			logger.error("Exception in clickButton method of BrowserActions class <{}>" + ex);
-			Reporter.addStepLog("Exception in clickButton method of BrowserActions class");
-			throw new NoSuchElementException();
+			reportLogs("Exception in clickButton method of BrowserActions class" , ex.toString());
+			throw new Exception();
+			
 		}
 	}
 
-	// Get text
-	public static String getTxt(WebDriver driver, By locator) throws Exception {
+	// Get text from page
+	public String getTxt(WebDriver driver, By locator) throws Exception {
 		try {
-			String text = driver.findElement(locator).getText();
-			logger.debug("Get text with locator : " + locator);
+			WebElement element = getElement(driver, locator);
+			String text = element.getText();
+			logger.info("Get text with locator : " + locator);
 			return text;
 		} catch (Exception ex) {
-			logger.error("Exception in getTxt method of BrowserActions class <{}>" + ex);
-			Reporter.setTestRunnerOutput("Exception in getTxt method of BrowserActions class <{}>" + ex);
 			takeSnapShot(driver);
-			//Reporter.addScreenCaptureFromPath(snapshotPath);
-			logger.error("Exception in getTxt method of BrowserActions class <{}>" + ex);
-			Reporter.addStepLog("Exception in getTxt method of BrowserActions class");
-			throw new NoSuchElementException();
+			reportLogs("Exception in getTxt method of BrowserActions class" , ex.toString());
+			throw new Exception();
 		}
 	}
 
 	// To enter text in text box
-	public static void enterText(WebDriver driver, By locator, String enterText) throws Exception {
+	public void enterText(WebDriver driver, By locator, String enterText) throws Exception {
 		try {
-			System.out.println(enterText);
-			driver.findElement(locator).sendKeys(enterText);
-			logger.debug("Enter text with locator : " + locator);
+			WebElement element = getElement(driver, locator);
+			element.sendKeys(enterText);
+			logger.info("Enter text with locator : " + locator);
 		} catch (NoSuchElementException ex) {
 			takeSnapShot(driver);
-			Reporter.addScreenCaptureFromPath(snapshotPath);
-			logger.error("NoSuchElementException in enterText method  of BrowserActions class <{}> " + ex);
+			reportLogs("NoSuchElementException in enterText method  of BrowserActions class" , ex.toString());
 		} catch (Exception ex) {
-			logger.error("Exception in enterText method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in enterText method of BrowserActions class" , ex.toString());
 		}
 	}
 
@@ -185,68 +194,72 @@ public class BrowserAction {
 	 */
 
 	// Find element and return it
-	public WebElement getElement(WebDriver driver, By locator) {
+	public WebElement getElement(WebDriver driver, By locator) throws Exception {
 		try {
-			logger.debug("getElement with locator : " + locator);
 			return driver.findElement(locator);
-		} catch (Exception ex) {
-			logger.error("Exception in getElement method of BrowserActions class <{}>" + ex);
+		} catch (NoSuchElementException ex) {
+			logger.error("NoSuchElementException in getElement method of BrowserActions class" +ex);
+			throw new NoSuchElementException();
+		}  catch (Exception ex) {
+			logger.error("Exception in getElement method of BrowserActions class" +ex);
+			throw new Exception();
 		}
-		return null;
 	}
 
 	// Hover and submenu
-	public static void hoverToSubmenu(WebDriver driver, WebElement hoverElement) throws InterruptedException {
+	public void hoverToSubmenu(WebDriver driver, By locator) throws Exception{
 		try {
+			WebElement element = getElement(driver, locator);
 			Actions action = new Actions(driver);
-			action.moveToElement(hoverElement).build().perform();
-			action.moveToElement(hoverElement).click().build().perform();
-			logger.debug("hoverToSubmenu with locator : " + hoverElement);
+			action.moveToElement(element).build().perform();
+			action.moveToElement(element).click().build().perform();
+			logger.info("hoverToSubmenu with locator : " + element);
 		} catch (Exception ex) {
-			logger.error("Exception in hoverToSubmenu method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in hoverToSubmenu method of BrowserActions class" , ex.toString());
 		}
 	}
 
-	// Wait upto loading indicator is displayed
-	public static void loadingIndicator(WebDriver driver) throws InterruptedException {
+	// Wait upto loading indicator is displaying
+	public void loadingIndicator(WebDriver driver, By locator) throws Exception {
 		try {
-			WebElement element = driver.findElement(By.id("ctl00_Img1"));
+			WebElement element = getElement(driver, locator);
 			for (int i = 1; i <= 60; i++) {
 				if (element.isDisplayed() == true) {
-					System.out.println("loading indicator is displaying");
-					logger.debug("Loading indicator is displaying");
+					logger.info("Loading indicator is displaying");
 					Thread.sleep(1000);
 				} else {
-					System.out.println("element is not displaying");
-					logger.debug("Now element is displaying");
+					logger.info("loading indicator is displaying");
 					break;
 				}
 			}
 		} catch (Exception ex) {
-			logger.error("Exception in loadingIndicator method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in loadingIndicator method of BrowserActions class" , ex.toString());
 		}
 	}
 
 	// select value from dropdown
-	public static void dropDownValue(WebDriver driver, By locator, String selectValue) {
+	public void dropDownValue(WebDriver driver, By locator, String selectValue) throws Exception {
 		try {
-			WebElement elementDropDown = driver.findElement(locator);
+			WebElement elementDropDown = getElement(driver, locator);
 			Select ddp = new Select(elementDropDown);
 			ddp.selectByVisibleText(selectValue);
-			logger.debug("Value is selecting from dropdown");
+			logger.info("Value selected from dropdown");
 		} catch (Exception ex) {
-			logger.error("Exception in dropDownValue method of BrowserActions class <{}>" + ex);
+			takeSnapShot(driver);
+			reportLogs("Exception in dropDownValue method of BrowserActions class" , ex.toString());
 		}
 	}
 
 	// To delete characters from string and return it.
-	public static String trimString(String oginalString, int startIndex, int enfIndex) {
+	public String trimString(String oginalString, int startIndex, int enfIndex) {
 		try {
 			StringBuffer sb = new StringBuffer(oginalString);
 			sb.delete(startIndex, enfIndex);
 			return sb.toString();
 		} catch (Exception ex) {
-			logger.error("Exception in trimString method of BrowserActions class <{}>" + ex);
+			reportLogs("Exception in trimString method of BrowserActions class" , ex.toString());
 		}
 		return null;
 	}
@@ -255,7 +268,7 @@ public class BrowserAction {
 	public ArrayList<String> readExcel() throws IOException {
 		try {
 			// Define path of excel sheet
-			String excelFilePath = "F:\\SeeniumRead.xlsx";
+			String excelFilePath = base_path+"\\TestData.xlsx";
 			FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
 
 			ArrayList<String> itemList = new ArrayList<String>();
@@ -299,17 +312,18 @@ public class BrowserAction {
 			return itemList;
 
 		} catch (Exception ex) {
-			logger.error("Exception in readExcel method of Browser class : " + ex);
+			reportLogs("Exception in readExcel method of Browser class" , ex.toString());
 		}
 		return null;
 	}
 
 	// Upload the file
-	public void uploadFile(WebElement element, String filepath) {
+	public void uploadFile(WebDriver driver, By locator, String filepath) {
 		try {
+			WebElement element = getElement(driver, locator);
 			element.sendKeys(filepath);
 		} catch (Exception ex) {
-			logger.error("Exception in uploadFile method of Browser class : " + ex);
+			reportLogs("Exception in uploadFile method of Browser class" , ex.toString());
 		}
 	}
 

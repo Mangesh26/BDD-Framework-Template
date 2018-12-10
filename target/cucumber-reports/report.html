@@ -48,7 +48,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Dec 9, 2018 07:23:23 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Dec 10, 2018 02:32:04 PM</span>
 				</a>
 			</li>
 			<li>
@@ -186,12 +186,12 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>User is able to test the login functiionality</span>
-						<span class='test-time'>Dec 9, 2018 07:23:24 AM</span>
+						<span class='test-time'>Dec 10, 2018 02:32:04 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 0m 17s+228ms</span>
+	<span class='duration right label'>0h 0m 16s+230ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Sucessful login with valid data</span>
@@ -218,11 +218,11 @@
 					<li test-id='6' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When User click on submit button</span>
 						<ul class='screenshots right'>
-							<li><a data-featherlight="image" href="F:\Workspace\demoPro_Cucumber (1)\demoPro_Cucumber\target\Screenshot\Fail2018-12-09 07-23-40.jpg"><i class='material-icons'>panorama</i></a></li>
+							<li><a data-featherlight="image" href="F:\Workspace\demoPro_Cucumber (1)\demoPro_Cucumber\target\Screenshot\Fail2018-12-10 14-32-20.jpg"><i class='material-icons'>panorama</i></a></li>
 						</ul>
 							<div class='pre'>Exception in clickButton method of BrowserActions class</div>
-							<div class='pre'><pre>java.util.NoSuchElementException
-	at init.util.BrowserAction.clickButton(BrowserAction.java:139)
+							<div class='pre'><pre>java.lang.Exception
+	at init.util.BrowserAction.clickButton(BrowserAction.java:150)
 	at pageDefination.Login_Page.loginClickButton(Login_Page.java:25)
 	at stepDefinition.Login_Steps.clkSubmit(Login_Steps.java:56)
 	at ✽.When User click on submit button(src/main/resources/Feature/Login.feature:7)
@@ -313,7 +313,7 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 9, 2018 07:23:24 AM</td>
+										<td>Dec 10, 2018 02:32:04 PM</td>
 										<td class='linked' test-id='3'>User is able to test the login functiionality.Sucessful login with valid data.Sucessful login with valid data</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
@@ -383,7 +383,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Dec 9, 2018 07:23:24 AM</td>
+                                                <td>Dec 10, 2018 02:32:04 PM</td>
                                                 <td class='linked' test-id='3'>User is able to test the login functiionality.Sucessful login with valid data.Sucessful login with valid data</td>
                                                 <td><span class='test-status fail'>fail</span></td>
                                             </tr>
@@ -430,7 +430,7 @@
 
                         <li class='exception displayed active'>
                             <div class='exception-heading'>
-                                <span class='exception-name'>java.util.NoSuchElementException</span>
+                                <span class='exception-name'>java.lang.Exception</span>
                                 <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
                             </div>
                             <div class='exception-content hide'>
@@ -445,10 +445,10 @@
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>Dec 9, 2018 07:23:40 AM</td>
+                                                        <td>Dec 10, 2018 02:32:20 PM</td>
                                                         <td class='linked' test-id='6'>User is able to test the login functiionality.Sucessful login with valid data.Sucessful login with valid data.When User click on submit button</td>
-                                                        <td><pre><pre>java.util.NoSuchElementException
-	at init.util.BrowserAction.clickButton(BrowserAction.java:139)
+                                                        <td><pre><pre>java.lang.Exception
+	at init.util.BrowserAction.clickButton(BrowserAction.java:150)
 	at pageDefination.Login_Page.loginClickButton(Login_Page.java:25)
 	at stepDefinition.Login_Steps.clkSubmit(Login_Steps.java:56)
 	at ✽.When User click on submit button(src/main/resources/Feature/Login.feature:7)
@@ -496,19 +496,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 9, 2018 07:23:23 AM</div>
+					<div class='panel-lead'>Dec 10, 2018 02:32:04 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 9, 2018 07:23:43 AM</div>
+			 		<div class='panel-lead'>Dec 10, 2018 02:32:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>20,012ms</div>
+					<div class='panel-lead'>17,403ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -540,17 +540,7 @@
 		<h5>TestRunner Logs</h5>
 		
 		<div class='card-panel'>
-				Exception in clickButton method of BrowserActions class <{}>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"loginbutton1"}
-  (Session info: chrome=70.0.3538.110)
-  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
-Command duration or timeout: 49 milliseconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'mangesh-PC', ip: '192.168.0.3', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:49780}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir6564_7579}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
-Session ID: abf79b26066539050e9fe29737b31c9a
-*** Element info: {Using=id, value=loginbutton1}
+				Exception in clickButton method of BrowserActions class<{}> java.lang.Exception
 		</div>
 	</div>
 </div>

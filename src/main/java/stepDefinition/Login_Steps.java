@@ -57,7 +57,7 @@ public class Login_Steps extends BrowserAction{
 	}
 	
 	@Then("^Application should navigate to home page$")
-	public void navigate_hmePage(){
+	public void navigate_hmePage() throws Exception{
 		Assert.assertTrue(homePageObj.verifyImgHeader(driver));
 	}
 	
@@ -71,12 +71,12 @@ public class Login_Steps extends BrowserAction{
 	}
 	
 	@Then("^should display error message$")
-	public void verifyErrorMessage() throws InterruptedException {
+	public void verifyErrorMessage() throws Exception {
 		Assert.assertTrue(loginPageObj.verifyErrMessage(driver));
 	}
 	
 	@Then("^login button should be displayed$")
-	public void verifyLoginbutton(){
+	public void verifyLoginbutton() throws Exception{
 		Assert.assertTrue(loginPageObj.verifyLoginButton(driver));
 	}
 	

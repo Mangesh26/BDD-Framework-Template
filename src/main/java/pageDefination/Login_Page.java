@@ -25,11 +25,11 @@ public class Login_Page extends BrowserAction implements LoginObject{
 		clickButton(driver, loginButton_id);
 	}
 	
-	public boolean verifyErrMessage(WebDriver driver){
+	public boolean verifyErrMessage(WebDriver driver) throws Exception{
 		return verifyElementDisplayed(driver, invaliMsg_id);
 	}
 	
-	public boolean verifyLoginButton(WebDriver driver){
+	public boolean verifyLoginButton(WebDriver driver) throws Exception{
 		return verifyElementDisplayed(driver, loginButton_id);
 	}
 }

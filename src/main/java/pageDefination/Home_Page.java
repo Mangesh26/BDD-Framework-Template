@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Home_Page extends BrowserAction implements HomeObject{
 	
-	public  boolean verifyImgHeader(WebDriver driver)
+	public  boolean verifyImgHeader(WebDriver driver) throws Exception
 	{
 		return verifyElementDisplayed(driver,imgHeader_xpath);
 	}

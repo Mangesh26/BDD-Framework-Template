@@ -1,0 +1,92 @@
+2018-12-10 14:21:36,765 [main] INFO DriverAction.class - ---------------------------------------START THE SCENARIO-------------------------------------------------------------------
+2018-12-10 14:21:36,774 [main] INFO DriverAction.class - Driver is inilizing
+2018-12-10 14:21:52,054 [main] INFO DriverAction.class - Launching the application with URL : https://www.facebook.com/
+2018-12-10 14:21:53,704 [main] INFO BrowserAction.class - Enter text with locator : By.id: email
+2018-12-10 14:21:54,022 [main] INFO BrowserAction.class - Enter text with locator : By.id: pass
+2018-12-10 14:21:54,095 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"loginbutton1"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 53 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53601}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir7928_12851}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1aeec18bd97ec4affcbe0b288ac910d3
+*** Element info: {Using=id, value=loginbutton1}
+2018-12-10 14:21:54,805 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions class<{}> java.lang.Exception
+2018-12-10 14:21:54,882 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-click='bluebar_logo']"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 65 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53601}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir7928_12851}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 1aeec18bd97ec4affcbe0b288ac910d3
+*** Element info: {Using=xpath, value=//h1[@data-click='bluebar_logo']}
+2018-12-10 14:21:55,547 [main] ERROR BrowserAction.class - Exception in viewElementDisplayed method of BrowserActions class<{}> java.lang.Exception
+2018-12-10 14:24:06,171 [main] INFO DriverAction.class - ---------------------------------------START THE SCENARIO-------------------------------------------------------------------
+2018-12-10 14:24:06,183 [main] INFO DriverAction.class - Driver is inilizing
+2018-12-10 14:24:20,310 [main] INFO DriverAction.class - Launching the application with URL : https://www.facebook.com/
+2018-12-10 14:24:39,594 [main] INFO BrowserAction.class - Enter text with locator : By.id: email
+2018-12-10 14:24:42,117 [main] INFO BrowserAction.class - Enter text with locator : By.id: pass
+2018-12-10 14:25:11,008 [main] ERROR BrowserAction.class - Exception in getElement method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"loginbutton1"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 91 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53640}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir7952_32269}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 8b218509f6e8930e2d74b12954bfe65a
+*** Element info: {Using=id, value=loginbutton1}
+2018-12-10 14:25:23,416 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions class<{}> java.lang.Exception
+2018-12-10 14:27:25,403 [main] INFO DriverAction.class - ---------------------------------------START THE SCENARIO-------------------------------------------------------------------
+2018-12-10 14:27:25,413 [main] INFO DriverAction.class - Driver is inilizing
+2018-12-10 14:27:41,430 [main] INFO DriverAction.class - Launching the application with URL : https://www.facebook.com/
+2018-12-10 14:27:42,250 [main] INFO BrowserAction.class - Enter text with locator : By.id: email
+2018-12-10 14:27:42,518 [main] INFO BrowserAction.class - Enter text with locator : By.id: pass
+2018-12-10 14:27:42,577 [main] ERROR BrowserAction.class - Exception in getElement method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"loginbutton1"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 41 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53679}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir6880_25025}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9f4a7d960a1586324d9db97f6f716bc3
+*** Element info: {Using=id, value=loginbutton1}
+2018-12-10 14:27:43,196 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions class<{}> java.lang.Exception
+2018-12-10 14:27:43,248 [main] ERROR BrowserAction.class - Exception in getElement method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//h1[@data-click='bluebar_logo']"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 43 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53679}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir6880_25025}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9f4a7d960a1586324d9db97f6f716bc3
+*** Element info: {Using=xpath, value=//h1[@data-click='bluebar_logo']}
+2018-12-10 14:27:43,865 [main] ERROR BrowserAction.class - Exception in viewElementDisplayed method of BrowserActions class<{}> java.lang.Exception
+2018-12-10 14:32:04,961 [main] INFO DriverAction.class - ---------------------------------------START THE SCENARIO-------------------------------------------------------------------
+2018-12-10 14:32:04,967 [main] INFO DriverAction.class - Driver is inilizing
+2018-12-10 14:32:18,791 [main] INFO DriverAction.class - Launching the application with URL : https://www.facebook.com/
+2018-12-10 14:32:19,898 [main] INFO BrowserAction.class - Enter text with locator : By.id: email
+2018-12-10 14:32:20,258 [main] INFO BrowserAction.class - Enter text with locator : By.id: pass
+2018-12-10 14:32:20,341 [main] ERROR BrowserAction.class - Exception in getElement method of BrowserActions classorg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"id","selector":"loginbutton1"}
+  (Session info: chrome=70.0.3538.110)
+  (Driver info: chromedriver=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 60 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'mangesh-PC', ip: '192.168.0.5', os.name: 'Windows 7', os.arch: 'x86', os.version: '6.1', java.version: '1.8.0_45'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53803}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.42.591088 (7b2b2dca23cca0862f674758c9a3933e685c27d5), userDataDir=C:\Users\mangesh\AppData\Local\Temp\scoped_dir9560_19473}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, version=70.0.3538.110, browserConnectionEnabled=false, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 8ce6a81609f62d9b76c0261a92f58ec2
+*** Element info: {Using=id, value=loginbutton1}
+2018-12-10 14:32:21,114 [main] ERROR BrowserAction.class - Exception in clickButton method of BrowserActions class<{}> java.lang.Exception

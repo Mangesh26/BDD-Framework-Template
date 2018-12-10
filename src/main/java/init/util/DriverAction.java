@@ -22,6 +22,9 @@ public class DriverAction extends BrowserAction{
 	public static WebDriver driver =null;
 	static String url = Constant.URL_app;
 
+	/** The base_path. */
+	private static String base_path = System.getProperty("user.dir");
+	
 	//Define The Properties
 	static Properties prop = new Properties();
 	
@@ -32,10 +35,9 @@ public class DriverAction extends BrowserAction{
 		try{
 			driver.get(url);
 			driver.manage().window().maximize();
-			logger.debug("Launching the application with URL : "+url);
+			logger.info("Launching the application with URL : "+url);
 		}catch(Exception ex){
 			takeSnapShot(driver);
-			Reporter.addScreenCaptureFromPath("F://test.jpg");
 			logger.error("Exception during launching the app <{}> "+ex);
 		}
 		
@@ -45,7 +47,7 @@ public class DriverAction extends BrowserAction{
 		try{
 			
 			try{
-				InputStream inputStream = new FileInputStream("F:\\Workspace\\demoPro_Cucumber (1)\\demoPro_Cucumber\\Config.properties");
+				InputStream inputStream = new FileInputStream(base_path+"\\Config\\Config.properties");
 				prop.load(inputStream);
 			}catch(FileNotFoundException ex){
 				logger.error("Proerty File is not found <{}> "+ex);
